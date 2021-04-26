@@ -17,6 +17,7 @@
 // RTOS header files.
 #include <FreeRTOS.h>
 #include <task.h>
+#include <task_space_ship.h>
 
 // Application header files.
 #include "config.h"
@@ -27,6 +28,8 @@ typedef enum AccelStates {
     CENTER,
     RIGHT,
 } dir_t;
+
+
 
 /*
  * Initialization function used to initialize hardware resources to use the

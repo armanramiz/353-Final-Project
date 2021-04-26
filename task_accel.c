@@ -94,6 +94,10 @@ void task_accel_bottom_half(void *pvParameters) {
     // Var to hold the current x-axis value.
     uint32_t xaxisValue;
 
+    BaseType_t status;
+    //SHIP_MSG_t msg;
+    //SHIP_CMD_t cmd;
+
     // Endless Task Loop.
     while (1) {
         // Get/Wait for task notification with x-axis value.
@@ -104,11 +108,16 @@ void task_accel_bottom_half(void *pvParameters) {
         // Update the recorded state of the accelerometer.
         ACCEL_DIR = CENTER;
         if (xaxisValue < (ACCEL_CENTER_SAMPLE - ACCEL_CENTER_THRESH)) {
+            //cmd = LEFT;
             ACCEL_DIR = LEFT;
         }
         else if (xaxisValue > (ACCEL_CENTER_SAMPLE + ACCEL_CENTER_THRESH)) {
+           // cmd = RIGHT;
             ACCEL_DIR = RIGHT;
         }
+
+        //status = xQueueSend(Queue_Space_Ship, &msg, portMAX_DELAY);
+
     }
 }
 

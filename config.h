@@ -28,4 +28,11 @@
 #define ACCEL_CENTER_THRESH    (830 / 3) // Radius of "center" region (830 being experimentally found limit)
 #define ACCEL_TASK_PRIORITY     3        // Priority of Accelerometer Task
 
+
+// Buzzer Task Configs
+//#define BUZZER_BPM              80 // Beats per minute to play melodies at
+#define LCD_QUEUE_SIZE       10 // Size of queue for pending melodies
+#define SHIP_TASK_PRIORITY    3  // Priority of Buzzer Task
+
+
 #endif /* CONFIG_H_ */

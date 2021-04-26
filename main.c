@@ -52,6 +52,9 @@ int main(void)
     initTaskButton();
     initTaskBuzzer();
     initTaskAccel();
+   // Crystalfontz128x128_Init();
+    //Task_Joystick_Init();
+    Task_Space_Ship_Init();
 
     // Create main menu task.
     xTaskCreate
@@ -62,6 +65,7 @@ int main(void)
         MENU_TASK_PRIORITY,
         &Task_Menu_Handle
     );
+
 
     // Start the FreeRTOS scheduler.
     vTaskStartScheduler();
